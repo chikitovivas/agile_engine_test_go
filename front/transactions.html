@@ -1,0 +1,40 @@
+{{ define "transactions" }}
+
+<!DOCTYPE html>
+<html lang="en">
+  {{ template "header" }}
+
+  <body>
+
+    {{ template "navbar" }}
+
+    <div class="container">
+
+      <div class="starter-template">
+        <h1>Transactions</h1>
+        <h1> Your balance: {{.Account.Balance}}</h1>
+        <table class="table">
+          <tr>
+            <th>ID</th>
+            <th>Amount</th>
+            <th>Type</th>
+            <th>Date</th>
+          </tr>
+          {{ range $foo := index .Account.Transactions }}
+          <tr>
+            <td>{{$foo.Id}}</td>
+            <td>{{$foo.Amount}}</td>
+            <td>{{$foo.PaymenType}}</td>
+            <td>{{$foo.Date}}</td>
+          </tr>
+          {{ end }}
+        </table>
+        
+      </div>
+
+    </div><!-- /.container -->
+
+    {{ template "footer" }}
+  </body>
+</html>
+{{ end }}

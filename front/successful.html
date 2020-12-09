@@ -1,0 +1,25 @@
+{{ define "successful" }}
+
+<!DOCTYPE html>
+<html lang="en">
+  {{ template "header" }}
+
+  <body>
+
+    {{ template "navbar" }}
+
+    <div class="container">
+
+      <div class="starter-template">
+        <h1>Transaction successful</h1>
+        <p class="lead">Thanks my friend!</p>
+        <h1> Your balance now is: {{.Account.Balance}}</h1>
+        
+      </div>
+
+    </div><!-- /.container -->
+
+    {{ template "footer" }}
+  </body>
+</html>
+{{ end }}
